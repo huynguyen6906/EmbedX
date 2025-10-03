@@ -1,0 +1,10 @@
+torch
+numpy
+h5py
+tqdm
+PyMuPDF
+sentence-transformers
+Pillow
+ftfy
+regex
+clip-anytorch
