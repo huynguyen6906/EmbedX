@@ -43,9 +43,9 @@ class EmbedX:
 
     def embed_Dataset(self):
         for filename in tqdm(os.listdir(self.dataset_path), desc="Embedding"):
+            file_path = os.path.join(self.dataset_path, filename)
             text = ""
             if filename.endswith(".pdf"):
-                file_path = os.path.join(self.dataset_path, filename)
                 doc = fitz.open(file_path)
                 for page in doc:
                     text += page.get_text()
