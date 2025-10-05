@@ -3,7 +3,7 @@ EmbedX is a Python library for generating image and text embeddings using CLIP, 
 
 **Notice:**  
 1. Supported file types:  
-   - PDF documents (`.pdf`)  
+   - PDF documents (`.pdf`,`.txt`,`.html`,`.docx`)  
    - RGB image files (`.png`, `.jpg`, `.jpeg`)  
 2. The library **cannot** read files in subfolders of `dataset_path`.
 
