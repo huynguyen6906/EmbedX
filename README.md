@@ -45,6 +45,10 @@ pip install .
 embedx.text.embed_Text("The text  you want to convert")
 ```
 
+```python
+embedx.image.embed_Text("The text  you want to convert")
+```
+
 *Convert all text files in dataset folder (output: .h5 file saving all vector):*
 ```python
 convert = embedx.text.EmbedX()                                  # Create a object to convert
