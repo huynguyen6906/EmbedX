@@ -19,7 +19,9 @@ setup(
         "Pillow",
         "ftfy",
         "regex",
-        "clip-anytorch"
+        "clip-anytorch",
+        "docx",
+        "bs4"
     ],
     python_requires=">=3.7",
     classifiers=[  

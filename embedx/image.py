@@ -87,3 +87,12 @@ def embed_Image(file_path):
     vector = vector / vector.norm(dim=-1, keepdim=True)
     vector = vector.cpu().detach().numpy().astype(np.float32)
     return vector
+
+def embed_Text(text):
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    model, preprocess = clip.load("ViT-B/32", device=device)
+    text_tokens = clip.tokenize([text]).to(device)
+    vector = model.encode_text(text_tokens)
+    vector = vector / vector.norm(dim=-1, keepdim=True)
+    vector = vector.cpu().detach().numpy().astype(np.float32)
+    return vector

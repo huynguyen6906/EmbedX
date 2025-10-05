@@ -8,3 +8,5 @@ Pillow
 ftfy
 regex
 clip-anytorch
+docx
+bs4
