@@ -34,14 +34,14 @@ class brute_force_search:
         topk_idx = np.argsort(sims)[::-1][:k]
         return [(self.image_paths[i], sims[i]) for i in topk_idx]
 
-    def search_text(self, text):
-        text_vector = text.embed_Text(text)
+    def search_text(self, qtext):
+        text_vector = text.embed_Text(qtext)
         sims = cosine_similarity(text_vector.reshape(1, -1), self.text_vectors)[0]
         best_idx = np.argmax(sims)
         return self.text_paths[best_idx], sims[best_idx]
 
-    def search_topK_texts(self, text, k=5):
-        text_vector = text.embed_Text(text)
+    def search_topK_texts(self, qtext, k=5):
+        text_vector = text.embed_Text(qtext)
         sims = cosine_similarity(text_vector.reshape(1, -1), self.text_vectors)[0]
         topk_idx = np.argsort(sims)[::-1][:k]
         return [(self.text_paths[i], sims[i]) for i in topk_idx]
