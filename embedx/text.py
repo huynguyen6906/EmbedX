@@ -125,4 +125,5 @@ class EmbedX:
 def embed_Text(text):
     model = SentenceTransformer('all-roberta-large-v1')
     vector = model.encode(text, show_progress_bar=False, convert_to_numpy=True)
+    vector = vector / np.linalg.norm(vector)
     return vector
