@@ -20,7 +20,7 @@ setup(
         "ftfy",
         "regex",
         "clip-anytorch",
-        "docx",
+        "python-docx",
         "bs4"
     ],
     python_requires=">=3.7",
