@@ -22,14 +22,14 @@ class brute_force_search:
             self.text_paths = np.array([p.decode("utf-8") for p in f["path"][:]])
             self.text_vectors = np.array(f["embeddings"][:])
 
-    def search_image(self, text):
-        text_vector = image.embed_Text(text)
+    def search_image(self, qtext):
+        text_vector = image.embed_Text(qtext)
         sims = cosine_similarity(text_vector.reshape(1, -1), self.image_vectors)[0]
         best_idx = np.argmax(sims)
         return self.image_paths[best_idx], sims[best_idx]
 
-    def search_topK_images(self, text, k=5):
-        text_vector = image.embed_Text(text)
+    def search_topK_images(self, qtext, k=5):
+        text_vector = image.embed_Text(qtext)
         sims = cosine_similarity(text_vector.reshape(1, -1), self.image_vectors)[0]
         topk_idx = np.argsort(sims)[::-1][:k]
         return [(self.image_paths[i], sims[i]) for i in topk_idx]
