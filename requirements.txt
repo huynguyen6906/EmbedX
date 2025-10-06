@@ -10,3 +10,4 @@ regex
 clip-anytorch
 python-docx
 bs4
+scikit-learn

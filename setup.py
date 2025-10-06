@@ -21,7 +21,8 @@ setup(
         "regex",
         "clip-anytorch",
         "python-docx",
-        "bs4"
+        "bs4",
+        "scikit-learn"
     ],
     python_requires=">=3.7",
     classifiers=[  
