@@ -62,7 +62,6 @@ class EmbedX:
         pbar.close()
 
     def embed_Other_file(self, file_path):
-        pbar = tqdm(total = 1, desc = "Embedding: ")
         image = self.preprocess(Image.open(file_path)).unsqueeze(0).to(self.device)
         vector = self.model.encode_image(image)
         vector = vector / vector.norm(dim=-1, keepdim=True)
@@ -76,8 +75,6 @@ class EmbedX:
 
             f["path"][idx] = file_path
             f["embeddings"][idx] = vector
-        pbar.update(1)
-        pbar.close()
 
 def embed_Image(file_path):
     device = "cuda" if torch.cuda.is_available() else "cpu"
